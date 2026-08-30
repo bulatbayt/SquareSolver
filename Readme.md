@@ -14,13 +14,6 @@
 7) Обработка ошибок ввода
 8) Возможность выбора для выхода из программы или продолжение
 
-!!Запуск программы.
-1)Требования: Компилятор gcc
-
-
-
-
-
 
 !Режимы работ:
              1) Coefficient: отедльный ввод коэффициентов и получение результатов и их запись в текстовый документ "solver_results.txt"
@@ -59,12 +52,10 @@ solver_project
 
 
 !Результаты:
-    1) ![Режим Coefficient](image.png)
-    2) ![Режим Complete](image-1.png)
-    3.1) ![Режим test / случайные коэффициенты](image-2.png)
-    3.2) ![Режим test / коэффициенты и корни из "unit_test.txt](image-3.png)
-    4) ![Режим help](image-4.png)
-    5) ![Результат записи результатов в текстовый документ "solver_results.txt"](image-5.png)
+    1) ![Режим Coefficient]<img width="767" height="226" alt="image" src="https://github.com/user-attachments/assets/32159c4b-622e-49ce-be6d-dca6a4fa073b" />
+    2) ![Режим Complete]<img width="672" height="260" alt="image-1" src="https://github.com/user-attachments/assets/4853cb81-b223-48af-9829-b355b1caf360" />
+    3.1) ![Режим test / случайные коэффициенты] <img width="748" height="816" alt="image-2" src="https://github.com/user-attachments/assets/b51990c4-cc5c-4191-9214-804039561d08" />
 
-
-!Алгоритм решения
+    3.2) ![Режим test / коэффициенты и корни из "unit_test.txt] <img width="773" height="681" alt="image-3" src="https://github.com/user-attachments/assets/1a15f517-3fcf-4a57-bb11-69f268b70461" />
+    4) ![Режим help]<img width="797" height="279" alt="image-4" src="https://github.com/user-attachments/assets/02b04840-a506-459b-a5f0-3ce896cd8812" />!
+    5) ![Результат записи результатов в текстовый документ "solver_results.txt"]<img width="1075" height="440" alt="image-5" src="https://github.com/user-attachments/assets/305771a7-db44-44db-acc8-008453ad5f26" />

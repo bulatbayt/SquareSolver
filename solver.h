@@ -1,5 +1,13 @@
+/**
+ * @enum decision
+ * @brief constants for the number of solutions to the equation
+ */
 enum decision { NO_DECISION, ONE_DECISION, TWO_DECISION, ENDLESSLY_DECISION};
 
+/**
+ * @struct coeff
+ * @brief structure of the coefficients of a quadratic equation
+ */
 struct coeff {
     double a;
     double b;

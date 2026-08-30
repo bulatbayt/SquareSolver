@@ -37,7 +37,9 @@ void clear_massive (char* massive);
  * @param argv -  command-line argument array
  * @return 0 при успешном завершении
  * @return 1 - if program execution error, 0 - if program execution success
- * @details program processes command-line arguments to select the operating mode If no mode is specified, keyboard input is requested
+ * @details program processes command-line arguments to select the operating mode.
+ * @details no mode is specified, keyboard input is requested
+ * @todo При выводе я не успеваю все прочитать, нужно добавить задержку при выводе
  */
 int main (int argc, char* argv[])
 {
@@ -150,6 +152,8 @@ int RunTests_txt (int amount, FILE* note)
 
     for (int i = 0; i < amount; i++)
     {
+        printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
+
         printf ("Test №: %d\n", i+1);
         fscanf (fp, "%lg", &square.a);//read from a file coefficient a
         fscanf (fp, "%lg", &square.b);//read from a file coefficient b
@@ -303,7 +307,8 @@ void mode_choise (double* x1, double* x2, struct coeff* square, char* mode, FILE
 
         printf (RED "Вы ввели неправильный mode\n" RESET_COLOR);
 
-        printf ("При запуске программы введите флаг компиляции help / или при выборе moda введите help\n");
+        printf ("При запуске программы введите флаг компиляции help / или при выборе moda введите help, чтобы ознакомиться со списком возможностей\n");
+        printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
     }
 
 }
@@ -479,8 +484,6 @@ void help_mode (char* mode)
     printf ("Введите coefficient: ввести коэффициенты квадратного уравнения\n");
     printf ("Введите complete: ввести уравнение в каноническом виде\n");
     printf ("Введите test: запустить режим тестов программы\n");
-
-    printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
     }
 
 }
@@ -488,43 +491,43 @@ void help_mode (char* mode)
 /**
  * @brief function for get information
  * @param struct coeff* square - pointer to the equation coefficients structure 
- * @return 1 - if program execution error, 0 - if program execution success
+ * @return 1 - if program execution success, 0 - if program execution error
  */
 int get_info (struct coeff* square)
 {
     hand_assert ( square != NULL, "! adress structure == NULL !", __LINE__, __FILE__);
 
     printf (BLUE "Введите значения для коэффициента a: " RESET_COLOR);
-    while (scanf ("%lg", &(*square).a) == 0) // cycle for correct input cpefficient a
+    if (scanf ("%lg", &(*square).a) == 0) // cycle for correct input cpefficient a
     {
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
         printf (GREEN "You are Poltoraskha meow!\n" RESET_COLOR);
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
 
-        printf (YELLOW "Введите корректное значение коэффициента a: " RESET_COLOR);
+        return 0;
     }
 
     printf (BLUE "Введите значения для коэффициента b: " RESET_COLOR); // vsnprintf
-    while (scanf ("%lg", &(*square).b) == 0)// cycle for correct input coefficient b
+    if (scanf ("%lg", &(*square).b) == 0)// cycle for correct input coefficient b
     {
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
         printf (GREEN "You are Poltoraskha meow!\n" RESET_COLOR);
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
 
-        printf (YELLOW "Введите корректное значение коэффициента b: " RESET_COLOR);
+        return 0;
     }
 
     printf (BLUE "Введите значения для коэффициента c: " RESET_COLOR);
-    while (scanf ("%lg", &(*square).c) == 0)
+    if (scanf ("%lg", &(*square).c) == 0)
     {
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
         printf (GREEN "You are Poltoraskha meow!\n" RESET_COLOR);
         printf (BLUE "-------------------------------------------------------------------\n" RESET_COLOR);
 
-        printf (YELLOW "Введите корректное значение коэффициента c: " RESET_COLOR);
+        return 0;
     }
 
-    return 0;
+    return 1;
 }
 /**
  * @brief function to obtain the number of solutions and calculate the roots
